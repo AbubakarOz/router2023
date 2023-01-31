@@ -1,0 +1,20 @@
+body {
+  text-align: center !important;
+  display: flex !important;
+  justify-content: center;
+  height: 100%;
+  background-color: #333;
+}
+
+.App {
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+  color: #fff;
+  text-shadow: 0 0.05rem 0.1rem rgb(0 0 0 / 50%);
+  max-width: 42em;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 1rem !important;
+}

@@ -1,0 +1,46 @@
+.headerMenu {
+  margin-bottom: auto !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inner {
+  box-sizing: border-box;
+  display: block;
+  font-weight: 900;
+  font-size: 1.4em;
+}
+
+.nav {
+  justify-content: center !important;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.menu {
+  color: #fff;
+  border-bottom-color: #fff;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  display: block;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.menu:focus {
+  color: #fff;
+  border-bottom: 0.25rem solid rgb(255, 255, 255);
+}
+
+.menu:hover {
+  color: #fff;
+  border-bottom: 0.25rem solid rgb(255, 255, 255, 0.5);
+}
