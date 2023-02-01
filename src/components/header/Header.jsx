@@ -1,14 +1,13 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import Home from "../home/Home";
 import Map from "../map/Map";
 import styles from "./Header.module.css";
 import CardContent from "../card/CardContent";
-import Shop from "../card/Shop";
 
 const Header = () => {
-  const [text, setText] = useState(Shop);
   const [value, setValue] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setValue(e.target.value);
@@ -16,10 +15,7 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const filtred = text.filter(
-      (item) => item.name.toLowerCase() === value.toLowerCase()
-    );
-    return filtred;
+    navigate("/card");
   };
 
   return (
@@ -28,16 +24,14 @@ const Header = () => {
         <div className={styles.inner}>Shoe store</div>
         <div>
           <form onSubmit={handleSubmit}>
-            <Link to="/card">
-              <input value={value} onChange={handleChange} />
-            </Link>
+            <input value={value} onChange={handleChange} />
           </form>
         </div>
         <div className={styles.nav}>
           <Link className={styles.menu} to="/">
             Home
           </Link>
-          <Link handleSubmit={handleSubmit} className={styles.menu} to="/card">
+          <Link className={styles.menu} to="/card">
             Shoes List
           </Link>
           <Link className={styles.menu} to="/map">
@@ -47,7 +41,7 @@ const Header = () => {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/card" element={<CardContent />} />
+        <Route path="/card" element={<CardContent value={value}/>} />
         <Route path="/map" element={<Map />} />
       </Routes>
     </div>
