@@ -3,6 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 42em;
+  min-width: 32em;
 }
 
 .inner {
@@ -43,4 +45,14 @@
 .menu:hover {
   color: #fff;
   border-bottom: 0.25rem solid rgb(255, 255, 255, 0.5);
+}
+
+input {
+  border-radius: 8px;
+  padding-left: 10px;
+  outline: none;
+}
+
+input:focus {
+  border-radius: 8px;
 }
